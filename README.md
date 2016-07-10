@@ -71,9 +71,60 @@ $ npm install apasswd --save
 Usage
 ---------
 
-```javascript
+### Generate a New Salt
+
+```Javascript
+'use strict'
+
+const apasswd = require('apasswd')
+const co = require('co')
+
+co(function * () {
+  let salt = yield apasswd.newSalt(24)
+
+  console.log(salt) // -> b8c0faa8df6e43fe9fa2f4a1
+}).catch((err) => console.error(err))
 
 ```
+
+### Digest Text
+
+```Javascript
+'use strict'
+
+const apasswd = require('apasswd')
+const co = require('co')
+
+let password = 'm*y*p*a*s*s*w*o*r*d'
+let salt = '1234asdf'
+
+co(function * () {
+  let hash = yield apasswd.digest(password, salt)
+  /* ... */
+}).catch((err) => console.error(err))
+
+```
+
+### Advanced Usage
+
+```Javascript
+'use strict'
+
+const co = require('co')
+// Define a new apasswd context.
+const apasswd = require('apasswd').create({
+  algorithm: 'pdkdf2', // algorithm for digest.
+  iterations: 120, // Iteration count
+  length: 84, // Digest key length
+  format: 'hex'
+})
+
+co(function () {
+  let hash = yield apasswd.digest('my_password', 'my_salt')
+}).catch((err) => console.error(err))
+
+```
+
 
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
