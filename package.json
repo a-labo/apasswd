@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/okunishinishi/node-apasswd#readme",
   "dependencies": {
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "randomval": "^2.0.1"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
