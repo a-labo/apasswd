@@ -1,14 +1,17 @@
 {
   "name": "apasswd",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Password manager",
   "main": "lib",
+  "browser": "sims/browser",
   "scripts": {
     "test": "./ci/test.js",
-    "prepublish": "./ci/build.js"
+    "prepublish": "./ci/build.js && ./ci/browser.js"
   },
-  "repository": "okunishinishi/node-apasswd",
-  "keywords": [],
+  "repository": "a-labo/apasswd",
+  "keywords": [
+    "digest"
+  ],
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishitaka.com@gmail.com",
@@ -16,14 +19,15 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/okunishinishi/node-apasswd/issues"
+    "url": "https://github.com/a-labo/apasswd/issues"
   },
-  "homepage": "https://github.com/okunishinishi/node-apasswd#readme",
+  "homepage": "https://github.com/a-labo/apasswd#readme",
   "dependencies": {
     "co": "^4.6.0",
     "randomval": "^2.0.1"
   },
   "devDependencies": {
+    "ape-compiling": "^4.3.3",
     "ape-covering": "^3.0.3",
     "ape-formatting": "^1.0.0",
     "ape-releasing": "^4.0.1",
