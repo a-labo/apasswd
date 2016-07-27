@@ -1,6 +1,6 @@
 {
   "name": "apasswd",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Password manager",
   "main": "lib",
   "browser": "shim/browser",
