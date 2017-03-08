@@ -20,10 +20,10 @@ describe('apasswd', function () {
   }))
 
   it('Apeman password', () => co(function * () {
-    let passwd = new APasswd()
-    assert.ok(passwd.newSalt())
-    let digest = yield passwd.digest('foo', 'bar')
-    assert.ok(digest)
+    let { newSalt, digest } = new APasswd()
+    assert.ok(newSalt())
+    let hash = yield digest('foo', 'bar')
+    assert.ok(hash)
   }))
 
   it('Apeman password', () => co(function * () {
